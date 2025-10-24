@@ -1,0 +1,108 @@
+common:
+  buffer_size: 100_0000
+  steps: 100_0000
+  hidden_size: 256
+  hidden_layers: 2
+  actor_activation: 'relu'
+  critic_activation: 'relu'
+  apply_layer_norm: false
+  actor_lr: 0.0003
+  critic_lr: 0.0003
+  gamma: 0.99
+  train_ratio: 1
+  batch_size: 256
+  self_expl_start: 0
+  learning_start: null
+  tau: 0.005
+  eval_envs: 10
+  save_points: 0
+  eval_points: 100
+  log_points: 500
+  eval_episodes: 30
+  final_eval_episodes: 100
+  reward_scale: 1.0
+  gpuid: 0
+  seed: 42
+  log_trajs: false
+  apply_per: false
+  flag: informal
+  timer: false
+  diffusion_steps: 20
+MultiGoal:
+  steps: 2_0000
+  eval_points: 50
+  log_points: 100
+  log_trajs: true
+  sparse: false
+MultiGoalPointMaze:
+  maze_map: 'simple'
+  steps: 10_0000
+  tar_entropy: 1.0
+  beta: 0.8
+  reward_type: 'sparse'
+  eval_points: 50
+  log_trajs: true
+  eval_episodes: 40
+  final_eval_episodes: 80
+  ent_est_components: 4
+  alpha_update_itv: 300
+  # alpha_lr: 0.1
+  # l: 0.15
+  # w0: 5.0
+MarioLevelGen:
+  smbgen_style: MultiFacet
+  eval_envs: 30
+  steps: 500000
+  alpha_update_itv: 1000
+  # alpha_lr: 0.1
+SAC:
+  tar_entropy: '-1d'
+DrAC:
+  pg_samples: 1
+  qt_samples: 1
+  reg_samples: 8
+  beta: 0.2
+  alpha_lr: 0.005
+  z_dim: 16
+  alpha_update_repeat: 1
+  actor_type: amortized
+DACER:
+  l: 0.1
+  w0: 3.0
+  tar_entropy: '-0.9d'
+  alpha_lr: 0.03
+  ent_est_components: 3
+  policy_delay: 2
+  alpha_update_itv: 10000
+  ent_est_samples: 200
+  reward_scale: 0.2
+  tanh_out: false
+debug:
+  steps: 2000
+  batch_size:  16
+  log_points: 100
+  eval_points: 20
+  eval_episodes: 10
+  hidden_size: 32
+  hidden_layers: 2
+  ent_est_components: 4
+pm_simple:
+  steps: 10_0000
+  maze_map: 'simple'
+pm_medium:
+  steps: 20_0000
+  maze_map: 'medium'
+pm_hard:
+  steps: 30_0000
+  maze_map: 'hard'
+  eval_episodes: 80
+  final_eval_episodes: 160
+  ent_est_components: 8
+Humanoid:
+  l: 0.15
+HalfCheetah:
+  l: 0.15
+Humanoid-v5:
+  l: 0.15
+HalfCheetah-v5:
+  l: 0.15
