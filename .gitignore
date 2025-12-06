@@ -1,0 +1,9 @@
+data/*
+legacy/*
+formal/*
+*.pyc
+.idea
+train*.sh
+formal*.sh
+figures/*
+timer/*
